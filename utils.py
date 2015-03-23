@@ -10,7 +10,7 @@ def getPrimes(lim):
     primes.append(2)
     #print "primes: ", primes
     # for all numbers below the higher limit. 
-    for i in range(3,lim+1):
+    for i in range(3,lim+1,2):
         isPrime = True
         #print "num!",i
         # check the current number against the already registered primes. 
