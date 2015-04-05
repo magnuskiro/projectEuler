@@ -12,14 +12,14 @@ def test():
     for a in range(1,10):
         if(a % 3 == 0 or a % 5 == 0):
             res+=a
-    print "result:",res
+    print("result:",res)
 
 def run():
     res=0
     for a in range(1,1000):
         if(a % 3 == 0 or a % 5 == 0):
             res+=a
-    print "result:",res
+    print("result:",res)
 
-#test()
+test()
 run()

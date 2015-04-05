@@ -55,7 +55,7 @@ digit = "\
 #print int(digit) -40
 
 def getSumOfNumber(number):
-    nums = array('c', str(number))
+    nums = array('u', str(number))
     s = 1 # sum
     for a in nums:
         s = s*int(a)
@@ -78,6 +78,6 @@ def getNumForLargestSum(digitLength):
         #exit()
     return high
     
-print "Sum of ciphers in number: ", getNumForLargestSum(4)
-print "Sum of ciphers in number: ", getNumForLargestSum(13)
+print("Sum of ciphers in number: ", getNumForLargestSum(4))
+print("Sum of ciphers in number: ", getNumForLargestSum(13))
 

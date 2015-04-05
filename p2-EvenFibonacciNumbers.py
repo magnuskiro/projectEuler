@@ -23,8 +23,8 @@ def getRes(limit):
         # update the sum if fib is even
         if(b % 2 == 0):        
             result+=b
-        print b
-    print "result:",result
+        #print(b)
+    print("result:",result)
 
 # print the results. 
 #getRes(10)

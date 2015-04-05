@@ -3,6 +3,10 @@ import math
 '''
 Generates prime number under a given higher limit.
 @param lim: the higher limit of wanted primes. 
+
+
+TODO: uppgrade to proper sieve. And reduce runtime. See problem 10 slution on
+website.  
 '''
 def getPrimes(lim):
     primes = []

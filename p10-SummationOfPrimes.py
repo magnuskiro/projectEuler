@@ -8,8 +8,8 @@ import math
 from utils import getPrimes
 
 # test
-print "test: ", sum(getPrimes(10))
+print("test: ", sum(getPrimes(10)))
 
 # run
-print "actual: ", sum(getPrimes(2000000))
+print("actual: ", sum(getPrimes(2000000)))
 

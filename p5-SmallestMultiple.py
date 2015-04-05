@@ -21,10 +21,10 @@ def getNumber(low, high):
                 break
         # if all modulo divisions are 0 print current number, and exit. 
         if div:
-            print "Finished: ", current
+            print("Finished: ", current)
             exit()
         #print current
 
-#getNumber(1,10)
-getNumber(1,20)
+getNumber(1,10)
+#getNumber(1,20)
 

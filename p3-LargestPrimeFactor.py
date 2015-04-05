@@ -37,9 +37,9 @@ def getLargestFactor(num):
 def getRes(num):
     # get potential primes for num. 
     makePrimes(int(math.ceil(math.sqrt(num))))
-    print primes
+    #print(primes)
     # get factors for num. 
-    print getLargestFactor(num)
+    print(getLargestFactor(num))
 
-#getRes(13195)
-getRes(600851475143)
+getRes(13195)
+#getRes(600851475143)

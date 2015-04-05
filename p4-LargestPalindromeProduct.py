@@ -44,4 +44,4 @@ def getHighestPalindrome(numbers):
     return sorted(list(palindromes))[-1]
 
 #print getHighestPalindrome(getNumbersInRange(1, 100))
-print getHighestPalindrome(getNumbersInRange(100, 1000))
+print(getHighestPalindrome(getNumbersInRange(100, 1000)))

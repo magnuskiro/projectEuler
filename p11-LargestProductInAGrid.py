@@ -92,4 +92,4 @@ def calcSums():
     #print sums  
     return sums
 
-print "Max sum:", max(calcSums())
+print("Max sum:", max(calcSums()))

@@ -31,5 +31,5 @@ def getMulti(a):
 # gives 385
 #print getMulti(range(1,11))
 
-#print getSum(range(1,11)) - getMulti(range(1,11))
-print getSum(range(1,101)) - getMulti(range(1,101))
+print(getSum(range(1,11)) - getMulti(range(1,11)))
+#print(getSum(range(1,101)) - getMulti(range(1,101)))

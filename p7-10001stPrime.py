@@ -31,5 +31,5 @@ while len(primes) < a:
     isPrime(i)
     i += 1
 
-print primes[-1] 
+print(primes[-1])
 
