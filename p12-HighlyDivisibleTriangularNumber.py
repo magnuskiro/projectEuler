@@ -24,15 +24,20 @@ divisors?
 
 class TriangleNumbers:
     def __init__(self):
-        self.triangleNumber=0
-        self.iterator=1 
+        self.triangleNumbers =[1]
+        self.iterator=2 
+        self.createNewTriangleNumbers(500)
     
     def getNextTriangleNumber(self):
-        self.triangleNumber+=self.iterator
+        self.triangleNumbers.append(self.triangleNumbers[-1]+self.iterator)
         self.iterator+=1
-        print("new:", self.triangleNumber, self.getFactors(self.triangleNumber))
-        return self.triangleNumber  
+        #print("new:",self.triangleNumbers[-1],self.getFactors(self.triangleNumbers[-1]))
+        return self.triangleNumbers[-1] 
     
+    def createNewTriangleNumbers(self, num):
+        for i in range(0,num):
+            self.getNextTriangleNumber()
+ 
     def getFactors(self, num):
         factors=[]
         for i in range(1,num+1):
@@ -42,9 +47,28 @@ class TriangleNumbers:
 
 def getTriangleNumberWith500Factors(tri, lim):
     while 1: 
-        if len(tri.getFactors(tri.getNextTriangleNumber())) > lim:
-            break
-    return tri.triangleNumber 
+        # binary search ish. 
+        # if the last triangle number has more factors than the limit
+        # we have the wanted triangle number in the list. 
+        print(tri.triangleNumbers[-1])
+        if len(tri.getFactors(tri.triangleNumbers[-1])) > lim:
+            # check the center 
+            if len(tri.getFactors(tri.triangleNumbers[len(tri.triangleNumbers)/2]))==lim:
+                return tri.triangleNumbers[len(tri.triangleNumbers)/2]
+            elif len(tri.getFactors(tri.triangleNumbers[len(tri.triangleNumbers)/2])) > lim:
+                tri.triangleNumbers=tri.triangleNumbers[len(tri.triangleNumbers):]
+            elif len(tri.getFactors(tri.triangleNumbers[len(tri.triangleNumbers)/2])) < lim:
+                tri.triangleNumbers=tri.triangleNumbers[:len(tri.triangleNumbers)]
+        # if the last triangle number in the list has less then limit factors.  
+        elif len(tri.getFactors(tri.triangleNumbers[-1]+1)) < lim:
+            # remove existing numbers with less than limit factors. 
+            tri.triangleNumbers = [] 
+            # create new triangle numbers 
+            tri.createNewTriangleNumbers(len(tri.triangleNumbers))
+        # if the last triangle number in the list has limit factors.  
+        elif len(tri.getFactors(tri.triangleNumbers[-1])) == lim:
+            return tri.triangleNumbers[-1] 
+    return "FAIL!"
 
 tri = TriangleNumbers()
 res = getTriangleNumberWith500Factors(tri, 10)
